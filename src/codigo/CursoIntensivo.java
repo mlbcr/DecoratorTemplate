@@ -1,9 +1,11 @@
 package codigo;
 
 public class CursoIntensivo extends Curso {
+	
+	protected double valor = 60;
 
     public CursoIntensivo() {
-        super("Imersão C Super Intensivo Rápido Vire Programador C Urgente", 600.0, 80);
+        super("Imersão C Super Intensivo Rápido Vire Programador C Urgente", 60, 80, 30);
         this.modulos.add("Programação em C");
         this.modulos.add("Exercícios C");
         this.modulos.add("Projeto Super Prático em C");
@@ -32,9 +34,10 @@ public class CursoIntensivo extends Curso {
             System.out.println("Erro na emissão do certificado.");
         }
     }
-
-    @Override
-    protected int getDuracao() {
-        return 15; 
+    
+    public double calcularValor(double v) {
+    	
+    	return valor + v;
+    	
     }
 }

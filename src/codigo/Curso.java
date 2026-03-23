@@ -7,12 +7,14 @@ public abstract class Curso {
     protected String nome;
     protected double precoBase;
     protected int cargaHoraria;
+    protected int duracao;
     protected List<String> modulos = new ArrayList<>();
 
-    public Curso(String nome, double precoBase, int cargaHoraria) {
+    public Curso(String nome, double precoBase, int cargaHoraria, int duracao) {
         this.nome = nome;
         this.precoBase = precoBase;
         this.cargaHoraria = cargaHoraria;
+        this.duracao = duracao;
     }
 
     public final void executarCurso() {
@@ -26,8 +28,8 @@ public abstract class Curso {
         
         System.out.println("\nDETALHES DO CURSO:");
         System.out.println("- Carga Horária: " + cargaHoraria + "h");
-        System.out.println("- Duração: " + getDuracao() + " dias");
-        System.out.println("- Investimento: R$ " + calcularValor());
+        System.out.println("- Duração: " + duracao + " dias");
+        System.out.println("- Investimento: R$ " + String.format("%.2f", calcularValor(0)));
         System.out.println("========================================\n");
     }
 
@@ -45,11 +47,9 @@ public abstract class Curso {
     protected abstract void aplicarAtividades();
     protected abstract void aplicarAvaliacoes();
     protected abstract void emitirCertificado();
-    protected abstract int getDuracao();
 
-    public double calcularValor() {
-    	return this.precoBase;
-    }
+    public abstract double calcularValor(double v);
+    
     public String getNome() { 
     	return this.nome; 
     }

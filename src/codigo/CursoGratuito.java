@@ -1,9 +1,11 @@
 package codigo;
 
 public class CursoGratuito extends Curso {
+	
+	protected double valor = 0;
 
     public CursoGratuito() {
-        super("Introdução básica a C", 0.0, 20);
+        super("Introdução básica a C", 0, 20, 7);
         this.modulos.add("O que é C");
         this.modulos.add("Para que serve C");
         this.modulos.add("Como usamos C");
@@ -24,8 +26,11 @@ public class CursoGratuito extends Curso {
         System.out.println("Esse curso não gera certificado!");
     }
 
-    @Override
-    protected int getDuracao() {
-        return 7;
+    
+    public double calcularValor(double v) {
+    	
+    	return valor + v;
+    	
     }
+
 }

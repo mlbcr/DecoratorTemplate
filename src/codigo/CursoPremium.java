@@ -1,9 +1,11 @@
 package codigo;
 
 public class CursoPremium extends Curso {
+	
+	protected double valor = 30;
 
     public CursoPremium() {
-        super("Bootcamp Programação em C Zero Ao Avançado Master", 450.0, 120);
+        super("Bootcamp Programação em C Zero Ao Avançado Master", 30, 120, 15);
         this.modulos.add("Aprendendo C");
         this.modulos.add("Estrutura de Dados em C");
         this.modulos.add("Grafos em C");
@@ -34,9 +36,10 @@ public class CursoPremium extends Curso {
             System.out.println("Erro na geração do certificado.");
         }
     }
-
-    @Override
-    protected int getDuracao() {
-        return 60; 
+    
+    public double calcularValor(double v) {
+    	
+    	return valor + v;
+    	
     }
 }
