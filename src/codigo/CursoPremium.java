@@ -3,7 +3,7 @@ package codigo;
 public class CursoPremium extends Curso {
 	
 	protected double valor = 30;
-	// Classe CursoPremium herda da classe Curso (provavelmente abstrata)
+	// Classe CursoPremium herda da classe Curso
     public CursoPremium() {
         super("Bootcamp Programação em C Zero Ao Avançado Master", 30, 120, 15);
         this.modulos.add("Aprendendo C");
