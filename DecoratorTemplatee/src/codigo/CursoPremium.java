@@ -11,17 +11,20 @@ public class CursoPremium extends Curso {
         this.modulos.add("Grafos em C");
         this.modulos.add("Como arrumar emprego em C");
     }
-
+    
+    // Especificação das atividades para o curso premium.
     @Override
     protected void aplicarAtividades() {
         System.out.println("Liberando notebooks Jupyter para exercícios práticos.");
     }
-
+    
+    // A avaliação é feita por um projeto final no Github
     @Override
     protected void aplicarAvaliacoes() {
-        System.out.println("Iniciando avaliação por pares e projeto final no GitHub.");
+        System.out.println("Iniciando avaliação por projeto final no GitHub.");
     }
-
+    
+    // Esse curso emite certificado
     @Override
     protected void emitirCertificado() {
     	try {

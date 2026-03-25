@@ -5,7 +5,7 @@ import java.util.List;
 
 // Definição da classe template
 public abstract class Curso {
-	// Atributos básicos docurso
+	// Atributos básicos  do curso
     protected String nome;
     protected double precoBase;
     protected int cargaHoraria;
@@ -37,22 +37,26 @@ public abstract class Curso {
         System.out.println("- Investimento: R$ " + String.format("%.2f", calcularValor(0)));
         System.out.println("========================================\n");
     }
-
+    
+    // Preparação de cada módulo do curso
     private void prepararConteudo() {
         System.out.println("Preparando " + modulos.size() + " módulos de conteúdo");
         for (String modulo : modulos) {
             System.out.println("   -> Configurando: " + modulo);
         }
     }
-
+    
+    // Método para disponibilizar as aulas do curso
     private void disponibilizarAulas() {
         System.out.println("Disponibilizando " + cargaHoraria + " horas de vídeo.");
     }
-
+    
+    // Esses métodos qe devem ser implementados pelas subclasses
     protected abstract void aplicarAtividades();
     protected abstract void aplicarAvaliacoes();
     protected abstract void emitirCertificado();
-
+    
+    // Calcular o valor do curso
     public abstract double calcularValor(double v);
     
     public String getNome() { 
